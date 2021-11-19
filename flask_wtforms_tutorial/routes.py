@@ -28,44 +28,13 @@ def stocks():
                 err = None
                  
                 #THIS IS WHERE YOU WILL CALL THE METHODS FROM THE CHARTS.PY FILE AND IMPLEMENT YOUR CODE
-                do_again = True
-                while do_again:
-                #get user input
-                    app.config['SECRET_KEY'] = 'ABCD1234'
-                    inputs = get_user_input()
-                    # print('\ninputs = \n', inputs)
-
-                    #make api call
-                    api_data = call_api(inputs, API_KEY)
-                    # print('\napi_data = \n', api_data)
-
-                    #filter out unwanted dates
-                    filtered_api_data = filter_dates(api_data, inputs)
-                    # print('\nfiltered_api_data = \n', filtered_api_data)
-
-                    if filtered_api_data:
-                  
             
                 
                 
                 
                 
-                    #This chart variable is what is passed to the stock.html page to render the chart returned from the api
-                        chart = render_graph(filtered_api_data, inputs)
-                    #render graph in browser
-                  # print("FILTERED DATA FROM INSIDE IF", filtered_api_data)
-                  # print("test")
-                  
-                    else:
-                      print("An unexpected error occurred...")
-                  # render_default()
-                      pass
-                    go_again = input('Would you like to see more stock data? (Y/N): ')
-                    go_again = go_again.upper()
-                    if (go_again == 'Y'):
-                        do_again = True
-                    else:
-                        do_again = False
+                #This chart variable is what is passed to the stock.html page to render the chart returned from the api
+                chart = "ASSIGN CHART TO THIS VARIABLE"
 
             return render_template("stock.html", form=form, template="form-template", err = err, chart = chart)
     
